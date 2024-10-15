@@ -1,0 +1,19 @@
+package com.kh.controller;
+
+public class Post {
+    private int boardNo;
+    private String boardTitle;
+
+    public Post(int boardNo, String boardTitle) {
+        this.boardNo = boardNo;
+        this.boardTitle = boardTitle;
+    }
+
+    public int getBoardNo() {
+        return boardNo;
+    }
+
+    public String getBoardTitle() {
+        return boardTitle;
+    }
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="jakarta.annotation.Resource"/>
+    <fullyQualifiedTypeName name="org.apache.tomcat.util.file.ConfigurationSource.Resource"/>
+    <fullyQualifiedTypeName name="java.io.IOException"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactory"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.io.Resources"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSessionFactoryBuilder"/>
+    <fullyQualifiedTypeName name="com.kh.mybatis.member.model.vo.Member"/>
+    <fullyQualifiedTypeName name="com.kh.mybatis.member.service.MemberService"/>
+    <fullyQualifiedTypeName name="com.kh.mybatis.board.service.BoardService"/>
+    <fullyQualifiedTypeName name="com.kh.mybatis.common.template.Template"/>
+    <fullyQualifiedTypeName name="com.skt.common.Template"/>
+    <fullyQualifiedTypeName name="jakarta.servlet.http.HttpServletResponse"/>
+    <fullyQualifiedTypeName name="com.kh.mybatis.board.model.vo.Board"/>
+    <fullyQualifiedTypeName name="com.skt.board.service.BoardService"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.skt.main.service.MainPageService"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="com.skt.board.model.vo.Board"/>
+    <fullyQualifiedTypeName name="com.skt.board.model.vo.BoardComment"/>
+    <fullyQualifiedTypeName name="com.skt.member.model.vo.MemberProfileImg"/>
+    <fullyQualifiedTypeName name="com.skt.member.service.MemberService"/>
+    <fullyQualifiedTypeName name="com.skt.tourist.model.vo.Tourist"/>
+    <fullyQualifiedTypeName name="com.skt.festival.model.vo.Festival"/>
+    <fullyQualifiedTypeName name="com.skt.board.model.vo.BoardFile"/>
+    <fullyQualifiedTypeName name="common.Template"/>
+    <fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+    <fullyQualifiedTypeName name="tesy.testServlet"/>
+    <fullyQualifiedTypeName name="com.skt.course.controller.CourseController"/>
+    <fullyQualifiedTypeName name="com.skt.course.service.CourseService"/>
+    <fullyQualifiedTypeName name="com.skt.course.service.CourseServiceImpl"/>
+    <fullyQualifiedTypeName name="com.skt.member.model.vo.Interested"/>
+    <fullyQualifiedTypeName name="com.skt.course.model.vo.Course"/>
+</qualifiedTypeNameHistroy>

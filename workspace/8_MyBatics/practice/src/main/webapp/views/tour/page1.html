@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>page1</title>
+    <!--css-->
+    <link rel="stylesheet" href="/menubar footer/menubar.css">
+    <style>
+        #search-form{
+            width: 1440px;
+            height: 480px;
+            margin-top: 100px;
+            
+        }
+
+        #search-first{
+            height: 100px;
+        }
+
+        #search-second{
+            height: 100px;
+            margin-top: 10px;
+        }
+
+        #search-tree{
+            height: 100px;
+            margin-top: 10px;
+        }
+
+        #search{
+            height: 100px;
+            margin-top: 10px;
+            width: 1440;
+        }
+
+
+        #content-box{
+            width: 1284px;
+            height: 2250px;
+            background-color: white;
+            margin-left: 80px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+
+        .select, .area{
+            display: inline-block;
+            float: left;
+            
+        }
+
+        .select{
+            border: solid none;
+            background-color: white;
+            width: 300px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50px;
+            margin-left: 100px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .select input[type=radio]{
+            display: none; 
+        }
+
+        .select input[type=radio]+label{
+            display: inline-block;
+            cursor: pointer;
+            height: 60px;
+            width: 120px;
+            border-radius: 50px;
+            line-height: 24px;
+            align-items: center;
+            font-weight:bold;
+            font-size:20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+           
+        }
+        .select input[type=radio]+label{
+            background-color: #fff;
+            color: #333;
+        }
+        .select input[type=radio]:checked+label{
+            background-color: #DFF0FF;
+            color: #333;
+        }
+
+        .area{
+            height: 100px;
+            width: 1000px;
+            float: right;
+        }
+
+        .area select{
+            appearance: none;
+            height: 80px;
+            width: 400px;
+            border-radius: 50px;
+            border: solid none;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            margin-right: 50px;
+        }
+
+        .season{
+            height: 80px;
+            width: 970px;
+            border-radius: 50px;
+            border: solid none;
+            background-color: white;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            margin-left: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .season input[type=checkbox]{
+            display: none;
+        }
+
+        .season input[type=checkbox]+label{
+            display: inline-block;
+            cursor: pointer;
+            height: 60px;
+            width: 120px;
+            border-radius: 50px;
+            line-height: 24px;
+            align-items: center;
+            font-weight:bold;
+            font-size:20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px;
+        }
+    
+        .season input[type=checkbox]+label{
+            background-color: #fff;
+            color: #333;
+        }
+        .season input[type=checkbox]:checked+label{
+            background-color: #DFF0FF;
+            color: #333;
+        }
+
+        .tema{
+            height: 80px;
+            width: 970px;
+            border-radius: 50px;
+            border: solid none;
+            background-color: white;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            margin-left: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tema input[type=checkbox]{
+            display: none;
+        }
+
+        .tema input[type=checkbox]+label{
+            display: inline-block;
+            cursor: pointer;
+            height: 60px;
+            width: 120px;
+            border-radius: 50px;
+            line-height: 24px;
+            align-items: center;
+            font-weight:bold;
+            font-size:20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 50px;
+        }
+    
+        .tema input[type=checkbox]+label{
+            background-color: #fff;
+            color: #333;
+        }
+        .tema input[type=checkbox]:checked+label{
+            background-color: #DFF0FF;
+            color: #333;
+        }
+
+        #search{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        input[type=submit]{
+            cursor: pointer;
+            width: 300px;
+            height: 80px;
+            border-radius: 50px;
+            border: solid #6FBAFF;
+            background-color: #6FBAFF;
+            color: white;
+            font-size: 40px;
+        }
+
+        .content2{
+            border-radius: 50px 50px 0 0;
+            width: 1280px;
+            border: solid none;
+            height: 122px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 126PX;
+            margin-left: 80px;
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .content2 input[type=radio]{
+            display: none;
+            
+        }
+
+        .content2 input[type=radio]+label{
+            display: inline-block;
+            cursor: pointer;
+            height: 122PX;
+            width: 630px;
+            border-radius: 50px 50px 0 0;
+            line-height: 24px;
+            font-weight:bold;
+            font-size:40px;
+            display: flex;
+            justify-content: space-between; /* 양 끝에 배치 */
+            width: 100%; /* 부모 컨테이너의 전체 너비를 사용 */
+            align-items: center;
+            justify-content: center;    
+            padding-left: 24px;
+            
+           
+           
+        }
+        .content2 input[type=radio]+label{
+            background-color: #FFC2E2;
+            color: #333;
+        }
+        .content2 input[type=radio]:checked+label{
+            background-color: #fff;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div id="navigator">
+            <ul id="navi">
+                <li><img class="icon" src="icon.png" alt="없음"></li>
+                <li class="content">
+                    <a href="">명소찾기</a>
+                    <ul>
+                        <li><a href="">지역별</a></li>
+                        <hr>
+                        <li><a href="">테마별</a></li>
+                    </ul>
+                
+                </li>
+                <li class="content">
+                    <a href="">축제</a>
+                    <ul>
+                        <li><a href="">MBTI</a></li>
+                        <hr>
+                        <li><a href="">계절별</a></li>
+                        <hr>
+                        <li><a href="">지역별</a></li>
+                        <hr>
+                        <li><a href="">테마별</a></li>
+                    </ul>
+                </li>
+                <li class="content">
+                    <a href="">여행코스</a>
+                </li>
+                <li class="content">
+                    <a href="">커뮤니티</a>
+                </li>
+                <div id="menu" class="content">
+                    <a href=""></a>
+                    <ul>
+                        <li><a href="">마이페이지</a></li>
+                        <hr>
+                        <li><a href="">장바구니</a></li>
+                        <hr>
+                        <li><a href="">로그아웃</a></li>
+                    </ul>
+                </div>
+            </ul>
+        </div>
+        <div id="search-form">
+           <div id="search-first">
+                <div class="select">
+                    <input type="radio" id="select" name="shop"><label for="select"><span>OFF</span></label>
+                    <input type="radio" id="select2" name="shop"><label for="select2">지역별</label>
+                </div>
+                <div class="area">
+                    <select name="color" class="area1">
+                        <option value=""></option>
+                        <option value="104">경기도</option>
+                    </select>
+                    <select name="color" class="area1">
+                        <option value=""></option>
+                        <option value="104">성남시</option>
+                    </select>
+                </div>
+           </div>
+           <div id="search-second">
+                <div class="select">
+                    <input type="radio" id="select3" name="shop2"><label for="select3"><span>계절별</span></label>
+                    <input type="radio" id="select4" name="shop2"><label for="select4">OFF</label>
+                </div>
+                <div class="season">
+                    <input type="checkbox" name="spring" id="spring" value="spring">
+                    <label for="spring">#봄</label>
+                    <input type="checkbox" name="summer" id="summer" value="summer">
+                    <label for="summer">#여름</label>
+                    <input type="checkbox" name="fall" id="fall" value="fall">
+                    <label for="fall">#가을</label>
+                    <input type="checkbox" name="winter" id="winter" value="winter">
+                    <label for="winter">#겨울</label>
+                </div>
+           </div>
+           <div id="search-tree">
+                <div class="select">
+                    <input type="radio" id="select5" name="shop3"><label for="select5"><span>OFF</span></label>
+                    <input type="radio" id="select6" name="shop3"><label for="select6">테마별</label>
+                </div>
+                <div class="tema">
+                    <input type="checkbox" name="healling" id="healling" value="healling">
+                    <label for="healling">#힐링</label>
+                    <input type="checkbox" name="healling" id="healling2" value="healling2">
+                    <label for="healling2">#힐링</label>
+                    <input type="checkbox" name="healling" id="healling3" value="healling3">
+                    <label for="healling3">#힐링</label>
+                    <input type="checkbox" name="healling" id="healling4" value="healling4">
+                    <label for="healling4">#힐링</label>
+                    <input type="checkbox" name="healling" id="healling5" value="healling5">
+                    <label for="healling5">#힐링</label>
+                </div>
+           </div>
+           <div id="search">
+                <input type="submit" value="검색">
+           </div>
+        </div>
+        <div class="content2">
+            <input type="radio" name="content-tour" id="ct" checked><label for="ct">관광지</label>
+            <input type="radio" name="content-tour" id="cf"><label for="cf">축제</label>
+        </div>
+        <div id="content-box">
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

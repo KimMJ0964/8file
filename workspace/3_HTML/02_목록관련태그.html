@@ -1,0 +1,49 @@
+<!DOCTYPE html>     <!-- html 문서의 형식을 선언 -->
+<html lang="ko">    <!-- html 문서의 시작, 끝을 표시해주는 태그 / lang속성은 페이지가 어느나라 언어로 되어있는지 표시 -->
+    <head>      <!-- 머리부를 나타냄 : 문서의 각종 정보, 제목, 설명, 외부파일을 가져오는 것 등을 작성 -->
+        <meta charset="UTF-8">
+        <meta name="generator" content="VScode">    <!-- generator : 해당 문서를 작성한 프로그램 -->
+        <meta name="author" content="Kimminjae">    <!-- author : 해당 문서를 작성한 사람 -->
+        <meta name="description" content="html 학습용 문서">
+
+        <title>목록태그관련</title>
+    </head>
+    <body>
+        <li>목록1</li>
+        <li>목록2</li>
+
+        <h1>ul : 순서없는 목록태그</h1>
+        <ul>
+            <li>HTML
+                <ul>
+                    <li>글자관련태그</li>
+                    <li>목록관련태그</li>
+                </ul>
+            </li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+        </ul>
+
+        <hr>
+
+        <h1>ol : 순서있는 목록 태그</h1>
+        
+        <ol>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+        </ol>
+
+        <!-- type 속성을 통해서 순서표현방식을 변경할 수 있다. (A, a, I, i....) -->
+        <!-- start속성을 이용해서 시작순서를 변경할 수 있다. / reversed : 역순-->
+        <ol type="I" start="5" reversed>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>jQuery</li>
+        </ol>
+        <br><br>
+    </body>
+</html>

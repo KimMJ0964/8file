@@ -1,0 +1,84 @@
+* {
+    padding: 0;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#wrapper {
+    width: 100%;
+    margin: auto;
+    padding: 20px 100px;    /*위아래 10px, 양옆 100px*/
+
+}
+
+#header {
+    width: 100%;    /* wrapper의 width 길이의 100% */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+    border: 1px solid red;
+}
+
+#logo {
+    width: 10%;
+}
+
+#login {
+    width: 10%;
+}
+
+/* nav 네비게이션바 */
+#nav {
+    width: 80%;
+    margin-top: 30px;
+    border: 1px solid black;
+}
+
+#nav > ul { 
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+#nav li a {
+    color: gray;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#nav > ul > li {
+    flex: 1;    /* 균등하게 뛰우기 */
+    position: relative;
+}
+
+#nav > ul ul:hover {
+    display: block;
+}
+
+#nav > ul > li ul {
+    display: none;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+}
+
+#nav > ul li a:hover + ul {
+    display: block;
+}
+
+#nav > ul > li a:hover {
+    color: rgb(48, 48, 48);
+}

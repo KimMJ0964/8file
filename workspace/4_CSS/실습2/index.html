@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>work2</title>
+    <style>
+         body{
+            margin:0;
+            padding:0;
+            background-color: black;
+        }
+
+        * {
+            padding: 0;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        ul, ol, li {
+            list-style: none;
+        }
+
+        .bo {
+            margin-bottom: 10px;
+        }
+
+        #wrapper {
+            width: 100%;
+            margin: auto;
+            padding: 10px 100px;    /*위아래 10px, 양옆 100px*/
+        }
+
+
+        /* header */
+        #header {
+            width: 100%;    /* wrapper의 width 길이의 100% */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px;
+        }
+
+        #hLogo {
+            float: left;
+            display: flex;
+        }
+
+        #myPage {
+            float: right;
+            display: flex;
+        }
+
+        #myPage > img {
+            margin-left: 20px;
+        }
+
+        #hLogo > img {
+            margin-right: 20px;
+        }
+
+        .search {
+            width: 600px;
+            height: 40px;
+            display: flex;
+            border: 2px solid rgb(199, 199, 199);
+            background-color: black;
+            border-radius: 40px;
+        }
+
+        .search input[type="text"] {
+            width: 70%;
+            height: 100%;
+            border: none;
+            border-right: 1px solid black;
+            padding: 6px;
+            background-color: black;
+            border-radius: 40px;
+        }
+
+        .search-img {
+            outline: none;
+            border: none;
+            width: 30%;
+            height: 100%;
+            background: url(img/icons/search.svg) no-repeat center/contain;
+            background-size: 20px 20px;
+            border-left: rgb(199, 199, 199);
+        }
+
+        #section {
+            float: left;
+            text-align: center;
+        }
+
+        #section1, #aside1 {
+            height: 100px;
+        }
+
+        #section1 > img {
+            width: 100%;
+            height: 100%;
+        }
+
+        #bbang {
+            width: 90%;
+            float:right;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .bbangTube {
+            margin: 0 10px;
+            margin-bottom: 20px;
+        }
+
+        .bbangTube > h3, p {
+            position: relative;
+            color: white;
+        }
+
+        .bbangTube > img {
+            width: 350px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- 헤더 -->
+        <div id="header" class="bo">
+            <!-- 로고 -->
+            <div id="hLogo">
+                <img src="img/icons/hamburger-menu.svg" alt="로고" style="width: 50px;">
+                <img src="img/icons/youtube-logo.svg" alt="로고" style="width: 135px;">
+            </div>
+            <!-- 검색폼 -->
+            <div class="search bo">
+                <input type="text" placeholder="검색">
+                <input type="button" class="search-img" style="background-color: rgb(72, 72, 72); border-radius: 0 40px 40px 0;">
+            </div>
+
+            <!-- 마이페이지 -->
+            <div id="myPage">
+                <img src="img/icons/youtube-apps.svg" alt="" style="width: 40px;">
+                <img src="img/icons/notifications.svg" alt="" style="width: 40px;">
+                <img src="img/icons/avatar-1.png" alt="" style="width: 40px;">
+            </div>
+        </div>
+
+        <div id="section">
+            <!-- 사이드 바 -->
+            <div id="section1">
+                <img src="img/icons/home.svg" alt="" style="width: 60px;">
+                <p  style="color: white;">홈</p>
+                <img src="img/icons/originals.svg" alt="" style="width: 60px;">
+                <p  style="color: white;">Shorts</p>
+                <img src="img/icons/subscriptions.svg" alt="" style="width: 60px;">
+                <p  style="color: white;">구독</p>
+                <img src="img/icons/library.svg" alt="" style="width: 60px;">
+                <p  style="color: white;">나</p>
+            </div>
+
+            
+        </div>
+
+        <!-- 빵빵이 -->
+         <div id="bbang">
+            <div class="bbangTube">
+                <img src="img/icons/thumbnail01.PNG">
+                <h3>빵빵이 택시기사ㅋㅋㅋㅋ</h3>
+                <br>
+                <div class="bbangView" style="color: gray"><img src="img/icons/avatar-1.png" alt="" style="width: 20px;"> 빵빵이의 일상</div>
+                <div class="bbangView" style="color: gray">조회수432만회 2개월전</div>
+            </div>
+            <div class="bbangTube">
+                <img src="img/icons/thumbnail01.PNG">
+                <h3>빵빵이 택시기사ㅋㅋㅋㅋ</h3>
+                <br>
+                <div class="bbangView" style="color: gray"><img src="img/icons/avatar-1.png" alt="" style="width: 20px;"> 빵빵이의 일상</div>
+                <div class="bbangView" style="color: gray">조회수432만회 2개월전</div>
+            </div>
+            <div class="bbangTube">
+                <img src="img/icons/thumbnail01.PNG">
+                <h3>빵빵이 택시기사ㅋㅋㅋㅋ</h3>
+                <br>
+                <div class="bbangView" style="color: gray"><img src="img/icons/avatar-1.png" alt="" style="width: 20px;"> 빵빵이의 일상</div>
+                <div class="bbangView" style="color: gray">조회수432만회 2개월전</div>
+            </div>
+            <div class="bbangTube">
+                <img src="img/icons/thumbnail01.PNG">
+                <h3>빵빵이 택시기사ㅋㅋㅋㅋ</h3>
+                <br>
+                <div class="bbangView" style="color: gray"><img src="img/icons/avatar-1.png" alt="" style="width: 20px;"> 빵빵이의 일상</div>
+                <div class="bbangView" style="color: gray">조회수432만회 2개월전</div>
+            </div>
+            <div class="bbangTube">
+                <img src="img/icons/thumbnail01.PNG">
+                <h3>빵빵이 택시기사ㅋㅋㅋㅋ</h3>
+                <br>
+                <div class="bbangView" style="color: gray"><img src="img/icons/avatar-1.png" alt="" style="width: 20px;"> 빵빵이의 일상</div>
+                <div class="bbangView" style="color: gray">조회수432만회 2개월전</div>
+            </div>
+            <div class="bbangTube">
+                <img src="img/icons/thumbnail01.PNG">
+                <h3>빵빵이 택시기사ㅋㅋㅋㅋ</h3>
+                <br>
+                <div class="bbangView" style="color: gray"><img src="img/icons/avatar-1.png" alt="" style="width: 20px;"> 빵빵이의 일상</div>
+                <div class="bbangView" style="color: gray">조회수432만회 2개월전</div>
+            </div>
+            <div class="bbangTube">
+                <img src="img/icons/thumbnail01.PNG">
+                <h3>빵빵이 택시기사ㅋㅋㅋㅋ</h3>
+                <br>
+                <div class="bbangView" style="color: gray"><img src="img/icons/avatar-1.png" alt="" style="width: 20px;"> 빵빵이의 일상</div>
+                <div class="bbangView" style="color: gray">조회수432만회 2개월전</div>
+            </div>
+            <div class="bbangTube">
+                <img src="img/icons/thumbnail01.PNG">
+                <h3>빵빵이 택시기사ㅋㅋㅋㅋ</h3>
+                <br>
+                <div class="bbangView" style="color: gray"><img src="img/icons/avatar-1.png" alt="" style="width: 20px;"> 빵빵이의 일상</div>
+                <div class="bbangView" style="color: gray">조회수432만회 2개월전</div>
+            </div>
+            <div class="bbangTube">
+                <img src="img/icons/thumbnail01.PNG">
+                <h3>빵빵이 택시기사ㅋㅋㅋㅋ</h3>
+                <br>
+                <div class="bbangView" style="color: gray"><img src="img/icons/avatar-1.png" alt="" style="width: 20px;"> 빵빵이의 일상</div>
+                <div class="bbangView" style="color: gray">조회수432만회 2개월전</div>
+            </div>
+            <div class="bbangTube">
+                <img src="img/icons/thumbnail01.PNG">
+                <h3>빵빵이 택시기사ㅋㅋㅋㅋ</h3>
+                <br>
+                <div class="bbangView" style="color: gray"><img src="img/icons/avatar-1.png" alt="" style="width: 20px;"> 빵빵이의 일상</div>
+                <div class="bbangView" style="color: gray">조회수432만회 2개월전</div>
+            </div>
+            <div class="bbangTube">
+                <img src="img/icons/thumbnail01.PNG">
+                <h3>빵빵이 택시기사ㅋㅋㅋㅋ</h3>
+                <br>
+                <div class="bbangView" style="color: gray"><img src="img/icons/avatar-1.png" alt="" style="width: 20px;"> 빵빵이의 일상</div>
+                <div class="bbangView" style="color: gray">조회수432만회 2개월전</div>
+            </div>
+         </div>
+    </div>
+    </div>
+</body>
+</html>

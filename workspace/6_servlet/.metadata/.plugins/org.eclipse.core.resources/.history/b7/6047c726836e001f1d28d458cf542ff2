@@ -1,0 +1,46 @@
+package com.kh.controller;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class pageTest
+ */
+public class pageTest extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+       
+    public pageTest() {
+        super();
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // GET 요청 처리 로직을 여기에 추가할 수 있습니다.
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String sql = "SELECT * FROM posts";
+        
+        try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:5000:xe", "KH", "KH");
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+            
+            // 결과 집합 처리
+            while (rs.next()) {
+                int id = rs.getInt("id");
+                String title = rs.getString("title");
+                String content = rs.getString("content");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}

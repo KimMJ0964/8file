@@ -1,0 +1,29 @@
+1728545360375	Rename package 'sub.controller'
+1728545369665	Rename package 'sub.model.dao'
+1728545380442	Rename package 'sub.service'
+1728551719946	Delete element
+1728551728658	Move 3 resources to 'js'
+1728551732985	Move 2 resources to 'css'
+1728551734715	Move 'sub_test.js' to 'js'
+1728553151905	Move 'login-icon.png' to 'img'
+1728557433737	Rename resource 'login-icon.png'
+1728558781883	Rename resource 'sub_mycourse2.jsp'
+1728559669976	Rename resource 'footer.html'
+1728560639359	Rename resource 'footer.jsp'
+1728560643935	Delete element
+1728560650713	Rename resource 'footerbar.jsp'
+1728561058110	Delete element
+1728561155912	Delete elements
+1728561318253	Delete element
+1728607207838	Delete element
+1728607776119	Move 'TourFestivalList.css' to 'css'
+1728607778401	Move 'TourFestivalList-area.js' to 'js'
+1728608400170	Delete element
+1728608450578	Copy package
+1728608480746	Copy package
+1728623894547	Delete element
+1728639290354	Delete elements
+1728641654781	Delete element
+1728642933986	Copy package
+1728642946698	Copy package
+1728643290238	Move 'TourFestivalDetail.css' to 'css'

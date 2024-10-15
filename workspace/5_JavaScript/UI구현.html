@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI구현</title>
+
+    <style>
+        body {
+            background-color: rgb(222, 235, 247);
+            margin: 0 auto;
+            position: absolute;
+            width: 1200px;
+            height: 600px;
+        }
+
+        #wrap {
+            text-align: center;
+            background-color: rgb(237, 237, 237);
+            border: 3px solid rgb(215, 220, 224);
+            width: 400px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+        }
+
+        table{
+            margin-top: 50px;
+            margin-left: 40px;
+            margin-right: 40px;
+            margin-bottom: 30px;
+        }
+
+        .input-name {
+            text-align: left;
+        }
+
+        .input-type1, .input-type2, .input-type3 {
+            border-style: none none dashed none;
+            background: none;
+            text-align: center;
+        }
+
+        .input-type2 {
+            width: 75px;
+        }
+
+        #submit-button {
+            width: 90%;
+            height: 50px;
+            background-color: rgb(197, 224, 180);
+            border: 3px solid rgb(195, 223, 177);
+            margin-bottom: 30px;
+            color: rgb(36, 67, 14);
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #submit-button:hover {
+            background-color: rgb(225, 252, 209);
+            border: 3px solid rgb(209, 240, 191);
+            color: rgb(78, 137, 36);
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #hide-output {
+            font-size: 9px;
+            color: rgb(167, 167, 167);
+            display: none;
+        }
+
+        #hide-warningID {
+            font-size: 9px;
+            color: rgb(255, 22, 22);
+            display: none;
+        }
+
+        #hide-warningPWD {
+            font-size: 9px;
+            color: rgb(255, 22, 22);
+            display: none;
+        }
+
+        #hide-warningPWDChecked {
+            font-size: 9px;
+            color: rgb(255, 22, 22);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <table>
+            <tr>
+                <th class="input-name"> 아이디</th>
+                <th><input type="text" class="input-type1" required id="idInput"></th>
+            </tr>
+            <tr></tr>
+                <th class="input-name"></th>
+                <th id="hide-warningID">필수 입력 항목 입니다.</th>
+            </tr>
+            <tr>
+                <th class="input-name"> 패스워드</th>
+                <th><input type="password" id="pwdInput" class="input-type1" onclick="checkPassword(this)" onkeyup="pwdHide(this)" required></th>
+            </tr>
+            <tr>
+                <th class="input-name"></th>
+                <th id="hide-warningPWD">필수 입력 항목 입니다.</th>
+            </tr>
+            <tr>
+                <th class="input-name"></th>
+                <th id="hide-output">영문자 대/소문자 특수문자, 숫자 포함 8 ~ 32자</th>
+            </tr>
+            <tr>
+                <th class="input-name"> 패스워드 확인</th>
+                <th><input type="password" id="pwdCheckedInput" class="input-type1" onkeyup="pwdCheckedHide(this)" required></th>
+            </tr>
+            <tr></tr>
+                <th class="input-name"></th>
+                <th id="hide-warningPWDChecked">필수 입력 항목 입니다.</th>
+            </tr>
+            <tr>
+                <th class="input-name"> 이메일</th>
+                <th><input type="text" class="input-type2" onkeyup="pwdOuterHide(this)">@<input type="text" class="input-type2" onkeyup="pwdOuterHide(this)"></th>
+            </tr>
+            <tr>
+                <th class="input-name"> 주소</th>
+                <th><input type="text" class="input-type3" onkeyup="pwdOuterHide(this)"></th>
+            </tr>
+            <tr>
+                <th class="input-name"></th>
+                <th><input type="text" class="input-type3" onkeyup="pwdOuterHide(this)"></th>
+            </tr>
+        </table>
+
+        <button type="submit" id="submit-button">가 입</button>
+    </div>
+
+    <script>
+        function checkPassword(_this) {
+            console.log(1);
+            const hideOutput = document.getElementById("hide-output");
+
+            hideOutput.style.display = 'block';
+
+        }
+
+        function pwdHide(_this) {
+            const pwdValue = _this.value; //사용자가 입력한 id
+
+            const hideId = document.getElementById('hide-warningID');
+            const idIp = document.getElementById('idInput');
+
+            if(idIp.value.trim() === ''){
+                hideId.style.display = 'block';
+            } else {
+                hideId.style.display = 'none';
+            }
+        }
+
+        function pwdCheckedHide(_this) {
+            const pwdCheckedValue = _this.value; //사용자가 입력한 id
+
+            const hidePwd = document.getElementById('hide-warningPWD');
+            const hideId = document.getElementById('hide-warningID');
+            const idIp = document.getElementById('idInput');
+            const pwdIp = document.getElementById('pwdInput');
+
+            if(idIp.value.trim() === ''){
+                hideId.style.display = 'block';
+            } else {
+                hideId.style.display = 'none';
+            }
+
+            if(pwdIp.value.trim() === ''){
+                hidePwd.style.display = 'block';
+            } else {
+                hidePwd.style.display = 'none';
+            }
+        }
+
+        function pwdOuterHide(_this) {
+            const pwdOtherValue = _this.value; //사용자가 입력한 id
+
+            const hideId = document.getElementById('hide-warningID');
+            const hidePwd = document.getElementById('hide-warningPWD');
+            const hideCheckPwd = document.getElementById('hide-warningPWDChecked');
+
+            const idIp = document.getElementById('idInput');
+            const pwdIp = document.getElementById('pwdInput');
+            const checkedPwdIp = document.getElementById('pwdCheckedInput');
+
+            if(idIp.value.trim() === ''){
+                hideId.style.display = 'block';
+            } else {
+                hideId.style.display = 'none';
+            }
+
+            if(pwdIp.value.trim() === ''){
+                hidePwd.style.display = 'block';
+            } else {
+                hidePwd.style.display = 'none';
+            }
+
+            if(checkedPwdIp.value.trim() === ''){
+                hideCheckPwd.style.display = 'block';
+            } else {
+                hideCheckPwd.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

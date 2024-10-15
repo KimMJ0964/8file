@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        #categoryOut {
+            border: 1px solid red;
+            height: 200px;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>취미</legend>
+
+        <input type="checkbox" id="all" name="category" value="all" class="chk" onclick="selectedAll(this)">
+        <label for="all">전체선택</label>
+
+        <input type="checkbox" id="total" name="category" value="total" class="chk">
+        <label for="total">종합</label>
+
+        <input type="checkbox" id="novel" name="category" value="novel" class="chk">
+        <label for="novel">소설</label>
+
+        <input type="checkbox" id="poem" name="category" value="poem" class="chk">
+        <label for="poem">시/에세이</label>
+
+        <input type="checkbox" id="society" name="category" value="society" class="chk">
+        <label for="society">경제/경영</label>
+
+        <input type="checkbox" id="myself" name="category" value="myself" class="chk">
+        <label for="myself">자기계발</label>
+
+        <input type="checkbox" id="child" name="category" value="child" class="chk">
+        <label for="child">아동</label>
+
+        <input type="checkbox" id="travel" name="category" value="travel" class="chk">
+        <label for="travel">여행</label>
+
+        <input type="checkbox" id="science" name="category" value="science" class="chk">
+        <label for="science">과학</label>
+
+        <input type="checkbox" id="history" name="category" value="history" class="chk">
+        <label for="history">역사/문화</label>
+
+        <input type="checkbox" id="language" name="category" value="language" class="chk">
+        <label for="language">외국어</label>
+
+        <input type="checkbox" id="computer" name="category" value="computer" class="chk">
+        <label for="all">컴퓨터</label>
+
+        <input type="checkbox" id="comic" name="category" value="comic" class="chk">
+        <label for="comic">만화</label>
+    </fieldset>
+
+    <br>
+
+    <div>
+        <input type="submit" value="카테고리 선택" id="submitB" onclick="output()">
+        <div id="categoryOut"></div>
+    </div>
+
+    <script>
+        function selectedAll(selectAll) {
+            const checkAll = document.getElementsByName('category');
+
+            checkAll.forEach((checkbox) => {
+                checkbox.checked = selectAll.checked;
+            })
+        }
+
+        function output() {
+            const checkboxes = document.getElementsByClassName("chk");
+            const divE1 = document.getElementById("categoryOut");
+
+            checkboxes.forEach(function(checkbox) {
+                if(checkbox.checked) {
+                    divE1.innerHTML = "1";
+                }
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 스타일</title>
+    <style>
+        .size-test {
+            border: 1px solid red;
+        }
+
+        #test1 {
+            width: 400px;
+            height: 200px;
+        }
+
+        #test2 {
+            width: 50%;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        블럭요소 : 한 줄로 영역을 차지하고 있는 요소 / 줄바꿈발생(div, p, pre, h)
+        인라인요소 : content부분만 영역을 차지하고 있는 요소 / 앞으로 다른 요소가 올 수 있음(span, lable, input, img, 글자....)
+
+        * 요소 : content + padding + border
+        요소 바깥쪽 영역 : margin
+    -->
+
+    <h1>레이아웃 관련 스타일</h1>
+    <h3>width, height</h3>
+    <p>기본적으로 내용을 차지하는 content영역의 가로, 세로 길이를 조정하는데 사용하는 스타일</p>
+
+    <h4>고정크기(px)</h4>
+    <div id="test1" class="size-test">고정크기</div>
+
+    <h4>가변크기(%)</h4>
+    <div id="test2" class="size-test">가변크기</div>
+
+    <h3>display : 화면 배치 방법 변경</h3>
+
+    <pre>
+        선택자 {
+            display : inline | block | inline-block
+        }
+    </pre>
+
+    <h4>display : inline</h4>
+    <div class="display-test red inline">첫번쨰</div>
+    <div class="display-test yellow inline">첫번쨰</div>
+    <div class="display-test pink inline">첫번쨰</div>
+    <!-- 인라인 요소는 크기 조절 x -->
+
+    <h4>display : block</h4>
+    <div class="display-test red block">첫번쨰</div>
+    <div class="display-test yellow block">첫번쨰</div>
+    <div class="display-test pink block">첫번쨰</div>
+
+    <h4>display : inline-block</h4>
+    <div class="display-test red inline-block">첫번쨰</div>
+    <div class="display-test yellow inline-block">첫번쨰</div>
+    <div class="display-test pink inline-block">첫번쨰</div>
+</body>
+</html>

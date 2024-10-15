@@ -1,0 +1,14 @@
+package com.kh.spring.board.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class BoardServiceImpl implements BoardService{
+	@Autowired
+	private SqlSessionTemplate sqlSession;
+	
+	@Override
+	public int selectListCount() {
+		return boardDao;
+	}
+
+}

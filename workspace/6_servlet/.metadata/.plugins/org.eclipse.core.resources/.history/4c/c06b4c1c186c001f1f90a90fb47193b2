@@ -1,0 +1,45 @@
+package com.kh.controller;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+/**
+ * http:localhost:5000/st/test1.do
+ */
+public class RequestGetServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    public RequestGetServlet() {
+        super();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Get 방식으로 요청시 해당 doGet 메소드가 저절로 호출된다.
+		// System.out.println("서버에 요청이 정상적으로 도착함");
+		
+		/*
+		 * 첫번째 매개변수인 request에는 요청시 전달된 내용들이 담겨있음(사용자가 입력한 값, 요청방식, 요청자의 ip주소 등)
+		 * 두번째 매개변수인 response는 요청 처리 후, 응답 처리 후, 응답에 사용되는 객체
+		 * 
+		 * 요청 처리를 위해서 요청시 전달된 값들 추출
+		 * request의 paramerter영역안에 존재
+		 * request.getPrameter("키");
+		 */
+		
+		String name = request.getParameter("name"); 	// "최지원" | ""
+		String gender = request.getParameter("gender");		// "M" | "W" | null
+		int age = Integer.parseInt(request.getParameter("age")); 	// "23" -> 23
+		String city = request.getParameter("city");		// "경기" | "서울"
+		double height = Double.parseDouble(request.getParameter(height))
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+}

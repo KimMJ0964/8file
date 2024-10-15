@@ -1,0 +1,68 @@
+package com.skt.course.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.skt.board.model.dao.BoardDao;
+import com.skt.course.model.dao.CourseDao;
+import com.skt.course.model.vo.Course;
+import com.skt.course.model.vo.SubCourse;
+
+import common.PageInfo;
+import common.Template;
+
+public class CourseServiceImpl implements CourseService {
+
+	private CourseDao cDao = new CourseDao();
+
+	@Override
+	public ArrayList<SubCourse> selectSubCourse(int courseNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<SubCourse> result = cDao.selectSubCourse(sqlSession, courseNo);
+
+		sqlSession.close();
+		return result;
+	}
+
+	@Override
+	public ArrayList<Course> selectCourseDetail(int courseNo) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Course> result = cDao.selectCourseDetail(sqlSession, courseNo);
+
+		sqlSession.close();
+		return result;
+	}
+
+	@Override
+	public int selectListCount() {
+		SqlSession sqlSession = Template.getSqlSession();
+		int listCount = cDao.selectListCount(sqlSession);
+
+		sqlSession.close();
+		return listCount;
+	}
+
+	@Override
+	public ArrayList<Course> selectList(PageInfo pi) {
+		SqlSession sqlSession = Template.getSqlSession();
+		ArrayList<Course> list = cDao.selectList(sqlSession, pi);
+		sqlSession.close();
+
+		return list;
+	}
+
+	@Override
+	public List<Course> getFilteredCourses(HashMap<String, Object> filterMap) {
+		SqlSession sqlSession = Template.getSqlSession();
+		return cDao.findCoursesByFilters(sqlSession, filterMap);
+	}
+
+	@Override
+	public int tourInterested(HashMap<String, Object> map) {
+		return 0;
+	}
+
+}

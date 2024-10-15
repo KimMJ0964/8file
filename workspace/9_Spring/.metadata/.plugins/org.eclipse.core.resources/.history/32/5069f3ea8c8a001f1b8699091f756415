@@ -1,0 +1,27 @@
+package com.kh.spring.board.model.vo;
+
+public class Reply {
+	
+	private int replyNo;
+	private String replyContent;
+	private int refBno;
+	private String replyWriter;
+	private String createDate;
+	private String status;
+	
+	public Reply() {
+		super();
+	}
+	
+	public Reply(int replyNo, String replyContent, int refBno, String replyWriter, String createDate, String status) {
+		super();
+		this.replyNo = replyNo;
+		this.replyContent = replyContent;
+		this.refBno = refBno;
+		this.replyWriter = replyWriter;
+		this.createDate = createDate;
+		this.status = status;
+	}
+
+
+}

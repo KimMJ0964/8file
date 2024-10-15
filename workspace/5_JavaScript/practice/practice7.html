@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
+    integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
+    crossorigin="anonymous"></script>
+    <style>
+        #wrap {
+            width: 550px;
+            height: 50px;
+        }
+
+        .search-sTitle {
+            width: 550px;
+            height: 50px;
+            border-style: none;
+            background-color: rgb(204, 204, 204);
+            padding: 10px;
+            display: none;
+        }
+
+        .search-sDate {
+            width: 550px;
+            height: 50px;
+            border-style: none;
+            background-color: rgb(204, 204, 204);
+            padding: 10px;
+            display: none;
+        }
+
+        .search-sWriter {
+            width: 550px;
+            height: 50px;
+            border-style: none;
+            background-color: rgb(204, 204, 204);
+            padding: 10px;
+            display: none;
+        }
+
+        .search > input[type="text"] {
+            width: 70%;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <fieldset style="text-align: center;">
+            <legend>검색할 항목을 선택하세요.</legend>
+            <label>
+                <input type="radio" name="radi" id="title" value="title" onclick='check(this)'>제목
+            </label>
+            <label>
+                <input type="radio" name="radi" id="date" value="date" onclick='check(this)'>날짜
+            </label>
+            <label>
+                <input type="radio" name="radi" id="writer" value="writer
+                " onclick='check(this)'>작성자
+            </label>
+        </fieldset>
+    </div>
+    <br>
+    <div class="search-sTitle">
+        검색할 제목을 입력하세요 : <br>
+        <input type="text">
+        <input type="submit" value="검색">
+    </div>
+
+    <div class="search-sDate">
+        검색할 날짜를 입력하세요. : <br>
+        <input type="date">
+        -
+        <input type="date">
+        <input type="submit" value="검색">
+    </div>
+
+    <div class="search-sWriter">
+        검색할 작성자 아이디를 입력하세요 : <br>
+        <input type="text" style="width: 40%;">
+        <input type="submit" value="검색">
+    </div>
+
+    <script>
+        var radios = document.querySelectorAll('input[type=radio][name="radi"]');
+        radios.forEach(radio => radio.addEventListener('change', () => {
+            if(radio.id === "title") {
+                $(".search-sDate").fadeOut();
+                $(".search-sWriter").fadeOut();
+                $(".search-sTitle").fadeIn();
+            } else if (radio.if === "date") {
+                $(".search-sTitle").fadeOut();
+                $(".search-sWriter").fadeOut();
+                $(".search-sDate").fadeIn();
+            } else if (radio.if === "writer"){
+                $(".search-sDate").fadeOut();
+                $(".search-sTitle").fadeOut();
+                $(".search-sWriter").fadeIn();
+            }
+        }));
+
+        
+    </script>
+</body>
+</html>

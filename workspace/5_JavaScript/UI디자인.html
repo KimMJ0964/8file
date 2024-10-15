@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI디자인 포토폴리오</title>
+
+    <style>
+        body {
+            width: 1000px
+        }
+        table, td, th {
+            border: 1px solid black;
+        }
+        table {
+            width: 1000px;
+        }
+        thead, tfoot {
+            background-color: rgb(255, 160, 122);
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+        tbody {
+            background-color: rgb(255, 255, 224);
+        }
+
+        form {
+            width: 350px;
+            text-align: center;
+        }
+        .form-Title {
+            font-weight: bold;
+        }
+
+        #input-table {
+            border-style: none;
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>포트폴리오 문제</h1>
+    
+    <fieldset>
+        <legend>공지사항 작성하기</legend>
+
+        <form action="insert.no" method="post">
+            <table id="input-table">
+                <tr>
+                    <th style="border-style: none; background-color: white; text-align: center;"><span class="form-Title">제목</span></th>
+                    <th style="border-style: none; background-color: white; text-align: left;"><input type="text" placeholder="제목을 입력하시오." name="title" style="width: 250px;" required></th>
+                </tr>
+                <tr>
+                    <td style="border-style: none; background-color: white; text-align: center;"><span class="form-Title">내용</span></td>
+                    <td style="border-style: none; background-color: white; text-align: left;"><textarea name="content" placeholder="내용을 입력하시오." style="height: 100px; width: 250px;" required></textarea></td>
+                </tr>
+                <tr>
+                    <td style="border-style: none; background-color: white; text-align: center;"><span class="form-Title">첨부파일</span></td>
+                    <td style="border-style: none; background-color: white; text-align: left;"><input type="file" name="uploadFile"></td>
+                </tr>
+            </table>
+            <br>
+
+            <input type="submit" value="작성하기">
+        </form>
+    </fieldset>
+    <br>
+    <hr>
+    <br>
+    <table id="table2">
+        <thead>
+        <tr>
+            <th style="width: 40px">번호</th> 
+            <th colspan="2">제목</th> 
+            <th>작성자</th>
+            <th>작성일</th> 
+            <th>조회수</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>9</td>
+            <td>공지사항 제목 9</td> 
+            <td style="width:70px"><button>바로가기</button></td>
+            <td style="width:120px">user01</td> 
+            <td style="width:120px">2021-03-29</td>
+            <td style="width:50px">34</td>
+        <tr>
+            <td>6</td>
+            <td>공지사항 제목 6</td> 
+            <td><button>바로가기</button></td>
+            <td>answ445</td> 
+            <td>2021-03-12</td>
+            <td>67</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>공지사항 제목 3</td> 
+            <td><button>바로가기</button></td>
+            <td>testg12</td> 
+            <td>2021-03-01</td>
+            <td>98</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>공지사항 제목 2</td> 
+            <td><button>바로가기</button></td>
+            <td>palwe3</td> 
+            <td>2021-01-02</td>
+            <td>85</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>공지사항 제목 1</td> 
+            <td><button>바로가기</button></td>
+            <td>xml23</td> 
+            <td>2020-12-24</td>
+            <td>124</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4">전체공지사항 갯수</td>
+            <td colspan="2">5개</td> 
+        </tr>
+    </tfoot>
+    </table>
+
+</body>
+</html>
+<!--
+<span class="form-Title">제목 </span><input type="text" placeholder="제목을 입력하시오." name="title" style="width: 250px;" required><br>
+            <span><span class="form-Title">내용 </span><textarea name="content" placeholder="내용을 입력하시오." style="height: 100px; width: 250px;" required></textarea><br>
+            <span class="form-Title">첨부파일 </span><input type="file" name="uploadFile"><br><br>
+-->

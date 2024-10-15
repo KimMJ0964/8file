@@ -1,0 +1,257 @@
+body{
+    width: 100%; min-height: 150vh;
+    margin: 0 auto;
+    padding: 0 auto;
+    font-family: 'NanumSquareRound';
+}
+
+.search-course{
+    width: 100%; height: 630px;
+    background-color: #DFF0FF;
+}
+#find{
+    width: 100%; height: 45px;
+    text-align: center;
+}
+
+#search-area{
+    padding-top: 20px;
+    width: 690px;
+    display: flex;
+    align-items: center;
+}
+input[type="text"]{
+    outline: none;
+    font-family: 'NanumSquareRound';
+}
+#search{
+    width: 580px; height: 20px;
+    border-radius: 200px 0 0 200px;
+    border: none;
+    text-align: left;
+    font-size: 20px;
+    padding: 20px 0 20px 30px ;
+}
+#search-area > input[type="button"]{
+    width: 80px; height: 60px;
+    background-color: #fff;
+    border-radius: 0 200px 200px 0;
+}
+.search-img{
+    background: url('./img/search-btn.png') no-repeat;
+    border: none;
+    cursor: pointer;
+    background-position: 15px 10px;
+}
+
+#area-list{
+    width: 1230px; height: 40px;
+    padding-top: 80px;
+    display: flex;
+    align-items: center;
+}
+.tab_content{
+    margin-top: 280px;
+}
+.tab_content:not(:last-child) {
+    font-size: 14px;
+    text-align: center;
+    line-height: 40px;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.area-btn{
+    width: 120px; height: 40px;
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 800;
+    font-family: 'NanumSquareRound';
+    text-align: center;
+    line-height: 40px;
+    border-radius: 100px;
+    border: none;
+    background-color: #FFC2E2;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+input[type="radio"] {
+    display: none;
+}
+input[type="radio"] + label {
+    display: inline-block;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+input[type="radio"]:checked + label {
+    background: #fd86c4;
+    color: #fff;
+}
+
+.conbox {
+    width: 100%;height: 300px;
+    background: #aaa;
+    margin: 20px auto;
+    display: none;
+    text-align: center;
+    line-height: 200px;
+    font-size: 16px;
+    color: white;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+input[id="tab01"]:checked ~ .con1, input[id="tab02"]:checked ~ .con2,
+input[id="tab03"]:checked ~ .con3, input[id="tab04"]:checked ~ .con4,
+input[id="tab05"]:checked ~ .con5, input[id="tab06"]:checked ~ .con6 {
+    display: block;
+}
+
+/* 테마별 여행코스 */
+.course_slide{
+    width: 100%; height: 540px;
+}
+.course_slide h1{
+    margin-top: 100px;
+    text-align: center;
+}
+.slide_contain{
+    width: 1580px;
+    padding-top: 50px;
+    position: relative;
+    overflow: hidden;
+  }
+  .slides{
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  .slide{
+    min-width: 300px; min-height: 300px;
+    margin-right: 20px;
+    overflow: hidden;
+    border-radius: 300px;
+    border: 1px #000 solid;
+    display: block;
+    cursor: pointer;
+  }
+  .slide > p{
+    line-height: 300px;
+    text-align: center;
+  }
+  .slide:last-child{
+    margin-right: 0;
+  }
+  .slide img{
+    width: 100%;height: auto;
+  }
+
+  /* 여행코스 추천 */
+  .course_recommond{
+    width: 100%; height: 1100px;
+    background-color: #DFF0FF;
+  }
+  .course_recommond h1{
+    padding-top: 60px;
+    text-align: center;
+  }
+  .course_con{
+    width: 1800px; height: 800px;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+  }
+  .course_recommond .box{
+    width: 360px; height: 800px;
+  }
+
+  .namebox1{
+    width: 300px; height: 50px;
+    background-color: #FFC2E2;
+    border-radius: 50px;
+    color: #000;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 10px;
+  }
+  .namebox2{
+    width: 300px; height: 50px;
+    background-color: #6FBAFF;
+    border-radius: 50px;
+    color: #000;
+    text-align: center;
+    line-height: 50px;
+    margin-top: 10px;
+  }
+  .course_recommond #course_line1{
+    width: 8px; height: 600px;
+    background-color: #FFC2E2;
+    border-radius: 30px;
+    position: absolute;
+    z-index: 1;
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+  .course_recommond #course_line2{
+    width: 8px; height: 700px;
+    background-color: #6FBAFF;
+    border-radius: 30px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 50px;
+  }
+  ul{
+    list-style-type: none;
+  }
+  ul li{
+    width: 100%; height: 20px;
+    flex-wrap: wrap;
+  }
+
+  .dot{
+    margin: 0;
+    margin-top: 35px;
+    margin-left: 4px;
+    width: 20px; height: 20px;
+    background-color: #000;
+    border-radius: 100%;
+    position: relative;
+    z-index: 100;
+    display: block;
+    cursor: pointer;
+  }
+  .dot-con:not(.first-dot){
+    margin-top: 160px;
+  }
+
+  .dot-con{
+    width: 100%; height: 170px;
+  }
+  .dot-con > p{
+    width: fit-content; height: 30px;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: left;
+    margin: -20px 0 0 40px;
+    display: block;
+    cursor: pointer;
+  }
+
+  .text-desc{
+    width: 280px; height: 120px;
+    float: right;
+    overflow-y: scroll;
+    background-color: #DFF0FF;
+    padding: 5px;
+    border-radius: 20px;
+    display: none;
+  }
+  #info{
+    text-align: left;
+    padding: 5px;
+  }
+  tr{
+    height: 30px;
+  }
+  th{
+    padding-right: 5px;
+  }

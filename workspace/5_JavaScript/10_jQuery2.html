@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <script
+            src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
+            integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
+            crossorigin="anonymous"></script>
+
+    <style>
+        .area {
+            border: 1px solid black;
+            height: 300px;
+        }
+
+        .qa-box > div{
+            width: 300px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: lightblue;
+            border: 1px solid skyblue;
+            cursor: pointer;
+            border-radius: 10px;
+            margin-top: 5px;
+        }
+
+        .qa-box > p {
+            border: 1px solid whitesmoke;
+            width: 300px;
+            height: 100px;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery</h1>
+
+    <h3>jQuery 이벤트</h3>
+    <div class="area" id="wrap">
+        <h6>클릭시 h6요소 추가</h6>
+    </div>
+
+    <script>
+        // 방법1. 이벤트 메소드 -> 동적으로 만들어진 요소에 이벤트 적용 안됨
+        // => 이벤트를 부여하는 시점에 요소가 DOM에 존재하지 않았기 때문에
+        $("#wrap > h6").click(function() {
+            $("#wrap").append("<h6>클릭시 h6요소 추가</h6>");
+        })
+
+        // 방법2. on메소드
+        $("#wrap > h6").on("click", function() {
+            $("#wrap").append("<h6>클릭시 h6요소 추가</h6>");
+        })
+
+        // 방법3 $(부모요소).on(이벤트명, 자식요소, 실행할 함수)
+        $("#wrap").on("click", "h6", function() {
+            $("#wrap").append("<h6>클릭시 h6요소 추가</h6>");
+        })
+
+
+        $("#wrap > h6").click(function() {
+            // $("#wrap").append("<h6>클릭시 h6요소 추가</h6>");
+
+            const wrap = document.getElementById('wrap');
+            const h6El = document.createElement('h6');
+            h6El.innerText="클릭시 h6요소 추가"
+            addClickEvent(h6El);
+            wrap.appendChild(h6El);
+        })
+
+        function addClickEvent(h6El) {
+            h6El.onclick = function() {
+                const wrap = document.getElementById('wrap');
+                const h6El = document.createElement('h6');
+                h6El.innerText="클릭시 h6요소 추가";
+                addClickEvent(h6El);
+                wrap.appendChild(h6El);
+            }
+        }
+    </script>
+
+    <hr>
+
+    <h2>시작적인 효과(Effect 메소드)</h2>
+    <p>페이지 내에 애니메이션 효과를 주기 위해 사용되는 메소드</p>
+
+    <h3>* show, hide, toggle</h3>
+    <p>선택된 요소가 점점 커지면서 보여지고, 점점 작아지면서 사라지게 만드는 메소드</p>
+
+    <button id="show-btn">보여주기</button>
+    <button id="hide-btn">숨기기</button>
+    <button id="toggle-btn">토글</button>
+    <br><br>
+
+    <img id="hide-show-img" src="data:image/jpeg;base64,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" alt="토글그림">
+
+    <script>
+        $("#show-btn").click(function() {
+            $("#hide-show-img").show(500);
+        })
+
+        $("#hide-btn").click(function() {
+            $("#hide-show-img").hide(500);
+        })
+
+        $("#toggle-btn").click(function() {
+            $("#hide-show-img").toggle(500);
+        })
+    </script>
+
+    <h3>fadeIn, fadeOut, fadeToggle</h3>
+    <p>선택된 요소가 점점 투명해지면서 사라지거나 보이지게하는 메소드</p>
+
+    <button id="fadein-btn">보여주기</button>
+    <button id="fadeout-btn">숨기기</button>
+    <button id="fadetoggle-btn">토글</button>
+
+    <br><br>
+    <img id="fade-img" src="data:image/jpeg;base64,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" alt="토글그림">
+    
+    <script>
+        $("#fadein-btn").click(function() {
+            $("#fade-img").fadeIn(500);
+        })
+
+        $("#fadeout-btn").click(function() {
+            $("#fade-img").fadeOut(500);
+        })
+
+        $("#fadetoggle-btn").click(function() {
+            $("#fade-img").fadeToggle(500);
+        })
+    </script>
+
+    <h3>* slideDown()과 slideUp()</h3>
+    <div class="qa-box">
+        <div>Q. 반품은 언제되나요? </div>
+        <p>A. 택배사 사정에따라 1 ~ 47일 정도 소유됩니다.</p>
+        <div>Q. 반품은 언제되나요? </div>
+        <p>A. 택배사 사정에따라 1 ~ 47일 정도 소유됩니다.</p>
+        <div>Q. 반품은 언제되나요? </div>
+        <p>A. 택배사 사정에따라 1 ~ 47일 정도 소유됩니다.</p>
+        <div>Q. 반품은 언제되나요? </div>
+        <p>A. 택배사 사정에따라 1 ~ 47일 정도 소유됩니다.</p>
+        <div>Q. 반품은 언제되나요? </div>
+        <p>A. 택배사 사정에따라 1 ~ 47일 정도 소유됩니다.</p>
+        <div>Q. 반품은 언제되나요? </div>
+        <p>A. 택배사 사정에따라 1 ~ 47일 정도 소유됩니다.</p>
+    </div>
+
+    <script>
+        $("qa-box > div").click(function() {
+            // this -> 클릭 이벤트가 발생한 요소(div)
+            // $(this).next(); -> 선택된 요소의 뒤에 있는 요소
+
+            const $p = $(this).next();
+            if($p.css("display") === "none") {
+                $("qa-box > p").slideUp();
+                $p.slideDown();
+            } else {
+                $p.slideUp();
+            }
+        })
+    </script>
+
+    <br><br><br><br><br><br><br><br>
+</body>
+</html>

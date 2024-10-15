@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .none-calculator {
+            background: red;
+            color : white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Practice2</h1>
+    <div>
+        <input type="number" id="fistNum">
+
+        <select id="calcul-select">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            <option value="%">%</option>
+        </select>
+
+        <input type="number" id="secondNum">
+
+        <button type="submit" onclick="resultFunk"> = </button>
+        
+        <input id="sum" disabled>
+    </div>
+
+    <script>
+        function resultFunk() {
+            // 드룹다운 값 가져오기
+            const operator = document.querySelector("#calcul-select").value;
+            const num1 = Number(document.getElementById('firstNum').value);
+            const num2 = Number(document.getElementById('secondNum').value);
+
+            if((operator === '/' || operator === '%') && num2 === 0) {
+                resultInput.value = "연산불가";
+                resultInput.style.background = "red";
+                resultInput.style.color = "white";
+            } else {
+                resultInput.style.background = "none";
+                resultInput.style.color = "black";
+                let result;
+                switch(operator) {
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        result = num1 / num2;
+                        break;
+                    case '%':
+                        result = num1 % num2;
+                        break;
+                }
+
+                const resultInput = document.getElementById("result");
+                resultInput.value = result;
+            }
+        }
+    </script>
+    
+</body>
+</html>

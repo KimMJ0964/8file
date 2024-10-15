@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+         body{
+            margin:0;
+            padding:0;
+        }
+        .wrap {
+            width: 1000px;
+            margin: auto;
+            border: 1px solid black;
+            border-radius: 20px;
+            margin: 0 auto;
+        }
+        #header, #footer, #aside { height: 20%; }
+        
+        #inputText {
+            background-color: lightgray;
+            border-radius: 60px;
+            border-style: none;
+            width: 400px;
+            height: 40px;
+            margin: 0 auto;
+            justify-items: center;
+            display: flex;
+        }
+
+        #box > div {
+            background-color: lightgray;
+            border-style: none;
+            width: 800px;
+            height: 30px;
+            margin: 0 auto;
+            justify-items: center;
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-weight: 900; text-align: center;">TodoList</h1>
+    <div class="wrap">
+        <br>
+
+        <input type="text" id="inputText">
+        <input type="submit" onclick="addDiv()">
+        <br>
+        <div id="aside">
+            <div id="box"></div>
+        </div>
+    </div>
+    <script>
+        function addDiv() {
+            aDiv = document.getElementById("inputText");
+            console.log(aDiv.value);
+            const node = document.createElement("div");
+            const textnode = document.createTextNode(aDiv.value);
+            node.appendChild(textnode);
+            document.getElementById("box").appendChild(node);
+        }
+    </script>
+</body>
+</html>

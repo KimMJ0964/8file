@@ -1,0 +1,44 @@
+<%@ page import="java.util.List" %>
+<%@ page import="com.kh.controller.Post" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+</head>
+<body>
+    <h1>Posts</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Board No</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            <c:forEach var="post" items="${posts}">
+                <tr>
+                    <td>${post.boardNo}</td>
+                    <td>${post.boardTitle}</td>
+                </tr>
+            </c:forEach>
+        </tbody>
+    </table>
+    
+    <div>
+        <c:if test="${currentPage > 1}">
+            <a href="?page=${currentPage - 1}">Previous</a>
+        </c:if>
+        
+        <c:forEach begin="1" end="${totalRecords / recordsPerPage + (totalRecords % recordsPerPage > 0 ? 1 : 0)}" var="i">
+            <a href="?page=${i}" <c:if test="${i == currentPage}">style="font-weight: bold;"</c:if>>${i}</a>
+        </c:forEach>
+        
+        <c:if test="${currentPage < (totalRecords / recordsPerPage + (totalRecords % recordsPerPage > 0 ? 1 : 0))}">
+            <a href="?page=${currentPage + 1}">Next</a>
+        </c:if>
+    </div>
+</body>
+</html>

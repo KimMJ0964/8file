@@ -1,0 +1,83 @@
+package com.kh.controller;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class pageTest
+ */
+public class pageTest extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+
+    public pageTest() {
+        super();
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 페이지 번호를 파라미터에서 가져옵니다. 기본값은 1입니다.
+        int page = 1;
+        int recordsPerPage = 5;
+
+        try {
+            page = Integer.parseInt(request.getParameter("page"));
+        } catch (NumberFormatException e) {
+            page = 1; // 페이지 번호가 없거나 잘못된 경우 기본값 1
+        }
+
+        int start = (page - 1) * recordsPerPage;
+
+        String sql = "SELECT * FROM ("
+                   + "SELECT a.*, ROWNUM rnum FROM ("
+                   + "SELECT * FROM posts ORDER BY boardNo DESC"
+                   + ") a WHERE ROWNUM <= ?) WHERE rnum > ?";
+
+        List<Post> posts = new ArrayList<>();
+        int totalRecords = 0;
+
+        try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:5000:xe", "KH", "KH");
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            // SQL 쿼리의 파라미터 설정
+            pstmt.setInt(1, page * recordsPerPage);
+            pstmt.setInt(2, start);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    int id = rs.getInt("boardNo");
+                    String title = rs.getString("boardTitle");
+                    posts.add(new Post(id, title));
+                }
+            }
+
+            // 전체 게시물 수를 계산
+            String countSql = "SELECT COUNT(*) FROM posts";
+            try (PreparedStatement countPstmt = conn.prepareStatement(countSql);
+                 ResultSet countRs = countPstmt.executeQuery()) {
+                if (countRs.next()) {
+                    totalRecords = countRs.getInt(1);
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        // 요청에 데이터를 설정하고 JSP로 포워딩
+        request.setAttribute("posts", posts);
+        request.setAttribute("totalRecords", totalRecords);
+        request.setAttribute("recordsPerPage", recordsPerPage);
+        request.setAttribute("currentPage", page);
+        request.getRequestDispatcher("/WEB-INF/views/page.jsp").forward(request, response);
+    }
+}

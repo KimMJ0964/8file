@@ -1,0 +1,53 @@
+package com.kh.controller;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class pageTest
+ */
+public class pageTest extends HttpServlet {
+    private static final long serialVersionUID = 1L;
+       
+    public pageTest() {
+        super();
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // GET 요청 처리 로직을 여기에 추가할 수 있습니다.
+    }
+
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String sql = "SELECT * FROM posts";
+        
+        try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:5000:xe", "KH", "KH");
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             ResultSet rs = pstmt.executeQuery()) {
+            
+            // 결과 집합 처리
+            while (rs.next()) {
+                // 예를 들어, 각 컬럼의 값을 가져옵니다.
+                int id = rs.getInt("id");
+                String title = rs.getString("title");
+                String content = rs.getString("content");
+                
+                // 처리한 데이터는 필요에 따라 request에 설정하거나 다른 작업을 수행할 수 있습니다.
+                // 예를 들어, request.setAttribute("posts", posts);
+            }
+            
+            // 필요에 따라 결과를 JSP로 포워딩하거나 다른 방식으로 클라이언트에 응답할 수 있습니다.
+            
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}

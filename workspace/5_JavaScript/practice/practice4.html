@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="fistNum">
+    <select id="buho">
+        <option value="add">+</option>
+        <option value="minus">-</option>
+        <option value="gom">*</option>
+        <option value="divine">/</option>
+        <option value="namugi">%</option>
+    </select>
+    <input type="number" id="secondNum">
+    <button type="submit" onclick="cc">=</button>
+    <input id="sum" disabled>
+
+    <script>
+        function cc() {
+            const buho = document.getElementById("buho");
+            console.log(buho);
+        }
+    </script>
+</body>
+</html>
